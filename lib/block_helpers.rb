@@ -14,7 +14,7 @@ module BlockHelpers
         # then we define a helper method 'hello_helper'
         #
         method_name = klass.name.split('::').last.underscore
-        klass.parent.class_eval %(
+        klass.module_parent.class_eval %(
           def #{method_name}(*args, &block)
             
             # Get the current helper object which has all the normal helper methods
